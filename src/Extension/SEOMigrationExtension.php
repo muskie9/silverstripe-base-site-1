@@ -29,20 +29,4 @@ class SEOMigrationExtension extends DataExtension
         'OGImageCustom' => Image::class,
         'PinterestImageCustom' => Image::class,
     ];
-
-    /**
-     * @param FieldList $fields
-     */
-    public function updateCMSFields(FieldList $fields)
-    {
-        $fields->addFieldsToTab(
-            'Root.Share',
-            [
-                HeaderField::create('LegacyOGHD', 'Legacy OpenGraph Image Fields'),
-                LiteralField::create('LegacyOGTxt', '<p>For reference only to migrate images to the Share tab.</p>'),
-                UploadField::create('FacebookPageImage', 'Image'),
-                UploadField::create('TwitterPageImage', 'Image')
-            ]
-        );
-    }
 }
